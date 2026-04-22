@@ -25,7 +25,7 @@ class Message(BaseModel):
 def chat(data: Message):
     message = data.message
 
-    result = process_message(message)
+    result = {"message": message}
 
     # ✅ Ensure dictionary
     if not isinstance(result, dict):
