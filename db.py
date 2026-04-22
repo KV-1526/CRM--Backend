@@ -1,6 +1,11 @@
 import os
 from pymongo import MongoClient
 
-client = MongoClient(os.getenv("mongodb+srv://kvgowtham03_db_user:zist9OkflgHPNNKq@cluster3.cfy8zii.mongodb.net/?appName=Cluster3"))
+mongo_url = os.getenv("MONGO_URL")
+
+if not mongo_url:
+    raise Exception("❌ MONGO_URL not found")
+
+client = MongoClient(mongo_url)
 db = client["crm_db"]
 collection = db["interactions"]
