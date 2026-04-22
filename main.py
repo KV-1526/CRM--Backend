@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from auth import router as auth_router
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from agent import process_message
+#from agent import process_message
 from db import collection
 
 app = FastAPI()
